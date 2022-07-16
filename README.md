@@ -24,3 +24,4 @@
 # step 3: WEB-SCRAPING	 
  
  1. for training our model we'll need a lot of data, thus it's essential to provide that data from somewhere, i'm going to do this with a web-scraper code. file attached ---> web_scraper.py
+
