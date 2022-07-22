@@ -33,8 +33,6 @@
 
  https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars
 
- https://www.kaggle.com/datasets/karthika95/pedestrian-detection-data-set                   # pedestrian
-
  https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian
 
  https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian
@@ -44,8 +42,6 @@
  https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection 
 
  https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
-
- https://public.roboflow.com/models/undefined                                               # self driving car dataset
 
 
 # step 4: MODEL TRAINING
