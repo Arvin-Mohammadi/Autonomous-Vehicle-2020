@@ -17,11 +17,11 @@
  1. in this step i'll introduce a good source for learning how object detection works:
  https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte
 
- 2. i cleaned up the object detection code a little bit you can check the jupyter notebook files --> object detection
+ 2. i cleaned up the object detection code a little bit you can check the jupyter notebook files --> [object detection](https://github.com/ArthasMenethil-A/CARLA/tree/main/object%20detection)
 
 # step 3: WEB-SCRAPING AND DATASET GATHERING 
  
- 1. for training our model we'll need a lot of data, thus it's essential to provide that data from somewhere, i'm going to do this with a web-scraper code. file attached ---> web_scraper.py
+ 1. for training our model we'll need a lot of data, thus it's essential to provide that data from somewhere, i'm going to do this with a web-scraper code. file attached ---> [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/web_scraper.py)
 
  2. there is also the parsehub software you can download and use 
 
@@ -48,5 +48,5 @@
 
  1. use the Image_preprocessing.ipynb file to label the data
 
- 2. in this step we need to use the Training_model.ipynb file to train and evaluate the model
+ 2. in this step we need to use the [Training_model.ipynb](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb) file to train and evaluate the model
 
