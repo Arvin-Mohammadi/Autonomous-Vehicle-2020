@@ -35,7 +35,7 @@
    https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
    
   2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached ---> [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/web_scraper.py)
-   
+  
   3.PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
 # step 2: IMAGE-PROCESSING (OBJECT DETECTION)
