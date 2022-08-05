@@ -15,8 +15,9 @@
  there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
  the second step is to get the data using CARLA itself
  
- 1. INTERNET:
+ ## 1. INTERNET:
   1. DATASET FROM DIFFERENT WEBSITES:
+
    https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
 
    https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars
