@@ -4,10 +4,10 @@
  https://t.me/engineering_stuff_69
 
 # step 1: CARLA SETUP
-        1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
+1. you can download the version of CARLA you need from this link: 
+ https://carla.org/
 
-
-        2. and this is a good playlist on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem
+2. and this is a good playlist on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem
  https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo
 
 # step 2: MAKING A DATASET
@@ -15,28 +15,27 @@
  the second step is to get the data using CARLA itself
  
  ## 1. INTERNET:
-        1. DATASET FROM DIFFERENT WEBSITES:
-            {
-            https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
+ 1. DATASET FROM DIFFERENT WEBSITES:
 
-            https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars
+   https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
 
-            https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars
+   https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars
 
-            https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian
+   https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars
 
-            https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian
+   https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian
 
-            https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat
+   https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian
 
-            https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection 
+   https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat
 
-            https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
-            }
+   https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection 
+
+   https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
    
-        2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached ---> [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/web_scraper.py)
-
-        3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
+2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached ---> [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/web_scraper.py)
+  
+3.PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
 # step 2: IMAGE-PROCESSING (OBJECT DETECTION)
 
