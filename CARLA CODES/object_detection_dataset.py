@@ -1,5 +1,3 @@
-# Welcome to CARLA ARVY's control.
-
 
 # ==============================================================================
 # -- Find carla module ---------------------------------------------------------
@@ -17,7 +15,6 @@ try:
 except IndexError:
     pass
 
-
 # ==============================================================================
 # -- Imports -------------------------------------------------------------------
 # ==============================================================================
@@ -28,14 +25,14 @@ import random
 
 try:
     import pygame
-    from pygame.locals import K_UP # throttle
-    from pygame.locals import K_DOWN # reverse 
-    from pygame.locals import K_LEFT #left
-    from pygame.locals import K_RIGHT # right
-    from pygame.locals import K_ESCAPE # -
-    from pygame.locals import K_SPACE # brake
-    from pygame.locals import K_r # for reseting the game 
-    from pygame.locals import K_s # for recording the images
+    from pygame.locals import K_UP
+    from pygame.locals import K_DOWN
+    from pygame.locals import K_LEFT
+    from pygame.locals import K_RIGHT
+    from pygame.locals import K_a
+    from pygame.locals import K_s
+    from pygame.locals import K_ESCAPE
+    from pygame.locals import K_SPACE
 except ImportError:
     raise RuntimeError('cannot import pygame, make sure pygame package is installed')
 
@@ -47,6 +44,8 @@ except ImportError:
 import time
 from cv2 import cv2
 from PIL import Image
+from io import StringIO
+
 
 # ==============================================================================
 # -- constants -----------------------------------------------------------------
@@ -54,26 +53,23 @@ from PIL import Image
 
 IM_WIDTH = 640
 IM_HEIGHT = 480
-K = 1
+
 # ==============================================================================
 # -- World ---------------------------------------------------------------------
 # ==============================================================================
+
 '''
 DESCRIPTION: 
     this class initiaties a world and spawn a vehicle (by default bmw grandtourer)
-
 '''
+
 class World():
-    
-    collision_hist = []; #collision history
-    def __init__(self, vehicle="grandtourer", record_enabled=False):
+
+    def __init__(self, vehicle="grandtourer"):
         
-        self.actor_list = [] 
+        # initializing a list of all of the actors in the world - assigning attributes to self  
         self.vehicle = vehicle
         self.surface = pygame.Surface((IM_WIDTH, IM_HEIGHT))
-        self.image = None
-        self.record = record_enabled
-        self.previous_clock = 0
 
         # initiating world
         self.client = carla.Client("localhost", 2000)
@@ -83,18 +79,15 @@ class World():
         
         # reseting the world
         self.reset(vehicle)
-        #time.sleep(3.0)
-        
-   
 
-    # this method spawns the vehicle (by default grandtourer)
     def spawn_vehicle(self, vehicle):
+        # this method spawns the vehicle (by default grandtourer)
+
         # getting all of the blueprints
         self.blueprint_library = self.world.get_blueprint_library()
         
         # making the blueprint of vehicle
         self.vehicle_blueprint = self.blueprint_library.filter(vehicle)[0]
-
 
         # getting a random spawn point from the map 
         spawn_point = random.choice(self.world.get_map().get_spawn_points())
@@ -119,106 +112,85 @@ class World():
         self.camera_sensor = self.world.spawn_actor(camera_blueprint, camera_spawn_point, attach_to=self.vehicle)
         self.actor_list.append(self.camera_sensor)
 
-    def CollisionSensor(self):
-
-        # spawning collision sensor
-        CollisionSensor_blueprint = self.blueprint_library.find('sensor.other.collision')
-        self.CollisionSensor =self.world.spawn_actor(CollisionSensor_blueprint, carla.Transform(), attach_to=self.vehicle)
-        self.actor_list.append(self.CollisionSensor)
 
     def reset(self, vehicle):
-        # this method spawns the vehicle and all of the sensors
-        
+        # destorying everything in the world
         self.actor_list = []
 
-        # spawning the actors 
+        # re-spawning the actors 
         self.spawn_vehicle(vehicle)
         self.spawn_camera_sensor()
 
         # showing and rendering the image
         self.camera_sensor.listen(lambda data: self.process_image(data))
 
-        # using collision sensor's data (event is each collision)
-        self.CollisionSensor()
-        self.CollisionSensor.listen(lambda event: self.collision_data(event))
-
-
     def image_renderer(self, display):
+        # renders the image onto the screen
         display.blit(self.surface, (0, 0))
-        
-
-
-    def collision_data(self, event):
-        
-        #adding each collision to collision history
-        self.collision_hist.append(event)
-
-        if len(self.collision_hist) != 0:
-            reward =-1*len(self.collision_hist)
-            print(reward)
-    
-
-    def image_recorder(self, clock):
-        self.image.save(f"raw_data\\raw_image_{clock.get_time()}.jpg")
-
-            
-
 
     def process_image(self, image):
+        # getting the image on display and converting it to surface 
         image.convert(cc.Raw)
         array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
         array = np.reshape(array, (image.height, image.width, 4))
         array = array[:, :, :3]
         array = array[:, :, ::-1]
-        self.image = Image.fromarray(array)
         self.surface = pygame.surfarray.make_surface(array.swapaxes(0, 1))
 
-
+    def exit(self):
+        for actor in self.actor_list: 
+            destroyed_sucessfully = actor.destroy()
+            print(actor)
+            print(destroyed_sucessfully)
 
 # ==============================================================================
 # -- Keyboard Control ----------------------------------------------------------
 # ==============================================================================
+
 '''
 DESCRIPTION: 
     defining the key map
-
 '''
+
 class KeyboardControl(object):
-    def __init__(self, world):
+    def __init__(self):
         self.control = carla.VehicleControl()
         self.steer_cache = 0.0
-
+        self.toggle_autopilot = False
+        self.toggle_datasave = False 
     def control_keys(self, world, clock):
         
         for event in pygame.event.get():
+            # what to do with each key pressed 
             if event.type == pygame.KEYDOWN:
                 if event.key == K_UP:
                     self.control.gear = 1
-                    print("up key pressed")
+                    print("Throttle")
                 elif event.key == K_DOWN:
                     self.control.gear = -1
-                    print("down key pressed")
+                    print("Reverse")
                 elif event.key == K_LEFT:
-                    print("left key pressed")
+                    print("Turn left")
                 elif event.key == K_RIGHT:
-                    print("right key pressed")
-                elif event.key == K_r:
-                    print("r key pressed")
-                    world.reset("grandtourer")
+                    print("Turn right")
                 elif event.key == K_ESCAPE:
-                    print("esc key pressed")
+                    self.exit_game(world)
+                    print("Exit")
+                elif event.key == K_SPACE:
+                    print("Brake")
+                elif event.key == K_a:
+                    self.autopilot(world)
+                    print("Autopilot toggled: ", self.toggle_autopilot)
                 elif event.key == K_s:
-                    world.record = not world.record
-                    print("s key pressed")
-                    
-                    
-
+                    self.toggle_datasave = not self.toggle_datasave
+                    print("Dataset toggled: ", self.toggle_datasave)
+        
+        # using the control function of vehicle 
         if isinstance(self.control, carla.VehicleControl):
             self.vehicle_control(pygame.key.get_pressed(), clock.get_time())
             self.control.reverse = self.control.gear < 0
         world.vehicle.apply_control(self.control)
         
-
     def vehicle_control(self, keys, milliseconds):
 
         # controlling the throttle
@@ -238,14 +210,31 @@ class KeyboardControl(object):
         # controllign the brake and hand brake 
         self.control.brake = 1.0 if keys[K_SPACE] else 0.0
 
+    def exit_game(self, world):
+        world.exit()
+        pygame.quite()
+    
+    def autopilot(self, world): 
+        # turns autopilot on/off 
+        self.toggle_autopilot = not self.toggle_autopilot
+        if self.toggle_autopilot: 
+            world.vehicle.set_autopilot(1)
+        else: 
+            world.vehicle.set_autopilot(0) 
+        
+    def get_dataset(self, world, temp_time):
+        if self.toggle_datasave:
+            pygame.image.save(world.surface, str(temp_time) + '.png')
+        else: 
+            pass
 
 # ==============================================================================
 # -- Game Loop -----------------------------------------------------------------
 # ==============================================================================
+
 '''
 DESCRIPTION: 
     this part is for the gameloop and user interface (image rendering)
-
 '''
 
 def game_loop():
@@ -260,45 +249,44 @@ def game_loop():
     # color balck rgb
     black = 0, 0, 0
 
+    temp_time_initial = 0
+    temp_time_final = 0
     try: 
         # setting up the display
         display = pygame.display.set_mode(size,
                 pygame.HWSURFACE | pygame.DOUBLEBUF)
         display.fill(black)
-
+        
         # initializing the world
         world = World()
-        controller = KeyboardControl(world)
-        
+        controller = KeyboardControl()
         clock = pygame.time.Clock()
-        record_time = 0
+
         while True:
+            clock.tick_busy_loop(60)
+            temp_time_final += clock.get_time()
 
-            clock.tick_busy_loop(500)
-
+            # using the contorller 
             if controller.control_keys(world, clock):
                 return
-
+            
+            if temp_time_final - temp_time_initial > 3000:
+                temp_time_initial = temp_time_final
+                controller.get_dataset(world, temp_time_final)
+            
+            if temp_time_final > 50000000:
+                controller.exit_game()
+            
+            # rendering the image 
             world.image_renderer(display)
-            if world.record:
-                print(clock.get_time())
-                if int(clock.get_time())-int(record_time) > 3000:
-                    print("i'm saving")
-                    world.image_recorder(clock)
-                    record_time = int(clock.get_time())
             pygame.display.flip()
 
-        
     except:
         print("couldn't initialize world")
     
-    
-
-
 
 # ==============================================================================
 # -- Main ----------------------------------------------------------------------
 # ==============================================================================
 
 game_loop()
- 

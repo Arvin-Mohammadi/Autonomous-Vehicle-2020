@@ -7,23 +7,15 @@
 
 1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 
-
-2. and this is a good playlist on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem
-
-1. you can download the version of CARLA you need from this link: 
- https://carla.org/
-
-2. and this is a good playlist on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem
->>>>>>> ea885d6b8ac2a857e8ad655d0b226af7529a95f1
- https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo
+2. and this is a good playlist on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem --> [good youtube playlsit](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo)
 
 # step 2: MAKING A DATASET
- there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
- the second step is to get the data using CARLA itself
+there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
+the second step is to get the data using CARLA itself
  
- ## 1. INTERNET:
-<<<<<<< HEAD
-        1. DATASET FROM DIFFERENT WEBSITES:
+## 1. INTERNET:
+
+1. DATASET FROM DIFFERENT WEBSITES:
 {
 https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
 
@@ -46,28 +38,16 @@ https://www.kaggle.com/datasets/alechantson/carladataset                        
 
 3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
- 1. DATASET FROM DIFFERENT WEBSITES:
+## 2. CARLA: 
+here's a little code i've written. all you have to do is run spawn_vehicle to make a bunch of cars in CARLA and then run [my code]()
+run these commands on cmd 
 
-   https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
+    py -3.7 spawn_vehicle.py -n 160 
+    py -3.7 object_detection_dataset.py 
 
-   https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars
+then in the window that appears push down "a" key to toggle autopilot and push "s" key to toggle save_data (which saves an image every 3 seconds to your hard drive)
+i've commented quite a bit in my code so you can probably analyse quite easily to make changes as you would want 
 
-   https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars
-
-   https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian
-
-   https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian
-
-   https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat
-
-   https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection 
-
-   https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
-   
-2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached ---> [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/web_scraper.py)
-  
-3.PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
->>>>>>> ea885d6b8ac2a857e8ad655d0b226af7529a95f1
 
 # step 2: IMAGE-PROCESSING (OBJECT DETECTION)
 
