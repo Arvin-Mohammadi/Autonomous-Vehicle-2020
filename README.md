@@ -56,6 +56,3 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
  1. in this step i'll introduce a good source for learning how object detection works: [object detection course](https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte)
   i've cleaned up and commented a bit on the source code of this course in this file so it might be a little easier to understand: [object detection file](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb)
 
- 2. i cleaned up the object detection code a little bit you can check the jupyter notebook files: [object detection](https://github.com/ArthasMenethil-A/CARLA/tree/main/object%20detection)
-
-
