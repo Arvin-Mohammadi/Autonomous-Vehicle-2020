@@ -48,17 +48,14 @@ run these commands on cmd
 then in the window that appears push down "a" key to toggle autopilot and push "s" key to toggle save_data (which saves an image every 3 seconds to your hard drive)
 i've commented quite a bit in my code so you can probably analyse quite easily to make changes as you would want 
 
+# step 3: MODEL TRAINING
 
-# step 2: IMAGE-PROCESSING (OBJECT DETECTION)
 
- 1. in this step i'll introduce a good source for learning how object detection works:
- https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte
+# OTHER RESOURCES
 
- 2. i cleaned up the object detection code a little bit you can check the jupyter notebook files --> [object detection](https://github.com/ArthasMenethil-A/CARLA/tree/main/object%20detection)
+ 1. in this step i'll introduce a good source for learning how object detection works: [object detection course](https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte)
+  i've cleaned up and commented a bit on the source code of this course in this file so it might be a little easier to understand: [object detection file](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb)
 
-# step 4: MODEL TRAINING
+ 2. i cleaned up the object detection code a little bit you can check the jupyter notebook files: [object detection](https://github.com/ArthasMenethil-A/CARLA/tree/main/object%20detection)
 
- 1. use the Image_preprocessing.ipynb file to label the data
-
- 2. in this step we need to use the [Training_model.ipynb](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb) file to train and evaluate the model
 
