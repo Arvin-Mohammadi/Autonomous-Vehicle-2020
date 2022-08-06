@@ -34,7 +34,7 @@ https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset
 https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
 }
    
-2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached: [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/web_scraper.py)
+2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached: [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py)
 
 3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
@@ -66,7 +66,4 @@ these 6 will be our labels for the object detection model (softmax layer)
 
  1. in this step i'll introduce a good source for learning how object detection works: [object detection course](https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte)
   i've cleaned up and commented a bit on the source code of this course in this file so it might be a little easier to understand: [object detection file](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb)
-
- 2. i cleaned up the object detection code a little bit you can check the jupyter notebook files: [object detection](https://github.com/ArthasMenethil-A/CARLA/tree/main/object%20detection)
-
 
