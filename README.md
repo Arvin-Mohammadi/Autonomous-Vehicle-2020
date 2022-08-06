@@ -16,22 +16,22 @@ the second step is to get the data using CARLA itself
 ## 1. INTERNET:
 
 1. DATASET FROM DIFFERENT WEBSITES: <br />
-{
-https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
+{ <br />
+https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars <br />
 
-https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars
+https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars <br />
 
-https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars
+https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars <br />
 
-https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian
+https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian <br />
 
-https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian
+https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian <br />
 
-https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat
+https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat <br />
 
-https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection 
+https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection <br />
 
-https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection
+https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection <br />
 }
    
 2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached: [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py)
