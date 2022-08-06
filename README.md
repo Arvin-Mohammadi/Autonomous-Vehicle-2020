@@ -56,7 +56,7 @@ so here we can use transfer learning and fine tuning to build an accurate model 
 3. truck
 4. car 
 5. dog
-6. cat
+6. cat <br />
 these 6 will be our labels for the object detection model (softmax layer)
 [Yolo version 4](https://github.com/AlexeyAB/darknet)
 [COCO dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
