@@ -50,6 +50,17 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
 
 # step 3: MODEL TRAINING
 
+so here we can use transfer learning and fine tuning to build an accurate model that doesn't use a lot of computational power. i'll be using YOLO plus the COCO dataset to detect the following 
+1. pedestrian  
+2. bike
+3. truck
+4. car 
+5. dog
+6. cat
+these 6 will be our labels for the object detection model (softmax layer)
+[Yolo version 4](https://github.com/AlexeyAB/darknet)
+[COCO dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
+
 
 # OTHER RESOURCES
 
