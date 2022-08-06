@@ -15,7 +15,7 @@ the second step is to get the data using CARLA itself
  
 ## 1. INTERNET:
 
-1. DATASET FROM DIFFERENT WEBSITES:
+1. DATASET FROM DIFFERENT WEBSITES: <br />
 {
 https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars
 
