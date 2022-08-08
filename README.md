@@ -52,7 +52,8 @@ run these commands on cmd
 then in the window that appears push down "a" key to toggle autopilot and push "s" key to toggle save_data (which saves an image every 3 seconds to your hard drive)
 i've commented quite a bit in my code so you can probably analyse quite easily to make changes as you would want 
 
-# step 3: MODEL TRAINING
+# step 3: OBJECT DETECTION
+
 
 ![object detection](https://i.ibb.co/ZL8dW5S/detected-picture.jpg)
 
