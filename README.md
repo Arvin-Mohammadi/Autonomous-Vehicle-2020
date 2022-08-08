@@ -4,6 +4,8 @@
 
 # step 1: CARLA SETUP
 
+![CARLA 9.5](https://drive.google.com/drive/folders/1tgLUdvrnMTaAWfAVYUA3xP-dInUR2cvR)
+
 1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 
 2. and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem.
@@ -49,16 +51,11 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
 
 # step 3: MODEL TRAINING
 
-so here we can use transfer learning and fine tuning to build an accurate model that doesn't use a lot of computational power. i'll be using YOLO plus the COCO dataset to detect the following 
-1. pedestrian  
-2. bike
-3. truck
-4. car 
-5. dog
-6. cat <br />
-these 6 will be our labels for the object detection model (softmax layer)
-[Yolo version 4](https://github.com/AlexeyAB/darknet)
-[COCO dataset](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/)
+so here we can use **transfer learning** and fine tuning to build an accurate model that doesn't use a lot of computational power. 
+
+- one way is to use this repository for [Yolo version 4](https://github.com/AlexeyAB/darknet) and follow the steps to make a fine tuned model 
+
+- another way is to follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte)
 
 
 # OTHER RESOURCES
