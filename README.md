@@ -10,13 +10,12 @@
 - and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem.
 1. **where to download**: go to [this link](https://github.com/carla-simulator/carla/blob/master/Docs/download.md) and get the version 9.5 CARLA 
 2. **what version of python is needed?**: according to <br /> \CARLA\CARLA 9.5\PythonAPI\carla\dist\carla-0.9.5-py3.7-win-amd64.egg <br /> you'll need the python version 3.7 windows amd64 so download that from the official python website
-3. **can you give me an example of running a code ?**: you should pay attention to these steps i'm about to tell you: 
-    - run this code in your cmd: 
-    ```
-    {
-      print(hello world)
-    }
-    ```
+3. **can you give me an example of running a code ?**: you should note the following 
+    - you'll need to install pygame and numpy (and any other module you'll use) for your python       version 3.7
+      ```
+      py -3.7 -m pip install --upgrade pip
+      py -3.7 -m pip install numpy pygame 
+      ```
 
 # step 2: MAKING A DATASET
 there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
