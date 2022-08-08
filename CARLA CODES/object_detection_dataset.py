@@ -1,4 +1,6 @@
-
+print(" control keys: ")
+print(" up arrow key = throttle \n down arrow key = reverse \n right arrow key = steer right \n left arrow key = steer left \n space bar = brake")
+print(" 'd' key = object detection \n 'a' key = autopilot \n 's' key = save dataset \n ")
 # ==============================================================================
 # -- Find carla module ---------------------------------------------------------
 # ==============================================================================
@@ -31,6 +33,7 @@ try:
     from pygame.locals import K_RIGHT
     from pygame.locals import K_a
     from pygame.locals import K_s
+    from pygame.locals import K_d
     from pygame.locals import K_ESCAPE
     from pygame.locals import K_SPACE
 except ImportError:
@@ -46,6 +49,8 @@ from cv2 import cv2
 from PIL import Image
 from io import StringIO
 
+import torch 
+from matplotlib import pyplot as plt 
 
 # ==============================================================================
 # -- constants -----------------------------------------------------------------
@@ -67,6 +72,7 @@ class World():
 
     def __init__(self, vehicle="grandtourer"):
         
+
         # initializing a list of all of the actors in the world - assigning attributes to self  
         self.vehicle = vehicle
         self.surface = pygame.Surface((IM_WIDTH, IM_HEIGHT))
@@ -135,6 +141,7 @@ class World():
         array = np.reshape(array, (image.height, image.width, 4))
         array = array[:, :, :3]
         array = array[:, :, ::-1]
+        self.image = array
         self.surface = pygame.surfarray.make_surface(array.swapaxes(0, 1))
 
     def exit(self):
@@ -153,7 +160,9 @@ DESCRIPTION:
 '''
 
 class KeyboardControl(object):
-    def __init__(self):
+    def __init__(self, model):
+
+        self.model = model
         self.control = carla.VehicleControl()
         self.steer_cache = 0.0
         self.toggle_autopilot = False
@@ -184,6 +193,12 @@ class KeyboardControl(object):
                 elif event.key == K_s:
                     self.toggle_datasave = not self.toggle_datasave
                     print("Dataset toggled: ", self.toggle_datasave)
+                elif event.key == K_d:
+                    print("detection initialized")
+                    image = np.squeeze(self.model(world.image).render())
+                    image = Image.fromarray(image)
+                    image.save("detected_picture.jpg")
+                    print("image saved")
         
         # using the control function of vehicle 
         if isinstance(self.control, carla.VehicleControl):
@@ -238,7 +253,13 @@ DESCRIPTION:
 '''
 
 def game_loop():
-    
+
+    # initilizing the model
+    try:
+        model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+    except:
+        print('something is wrong here ')
+
     # initializing pygame
     pygame.init()
     pygame.font.init()
@@ -259,7 +280,7 @@ def game_loop():
         
         # initializing the world
         world = World()
-        controller = KeyboardControl()
+        controller = KeyboardControl(model)
         clock = pygame.time.Clock()
 
         while True:
@@ -274,12 +295,15 @@ def game_loop():
                 temp_time_initial = temp_time_final
                 controller.get_dataset(world, temp_time_final)
             
-            if temp_time_final > 50000000:
+            if temp_time_final > 5000000:
                 controller.exit_game()
             
+
             # rendering the image 
             world.image_renderer(display)
             pygame.display.flip()
+            
+
 
     except:
         print("couldn't initialize world")
