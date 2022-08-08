@@ -81,6 +81,13 @@ so here we can use **transfer learning** and fine tuning to build an accurate mo
 
 - another way is to follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte)
 
+to run my code for this run this command:
+    `
+    py -3.7 spawn_vehicle.py -n 160 
+    py -3.7 object_detection_dataset.py 
+    `
+and then press 'd' key and that will save a picture to your default path that 
+
 # OTHER RESOURCES
 
  1. in this step i'll introduce a good source for learning how object detection works: [object detection course](https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte)
