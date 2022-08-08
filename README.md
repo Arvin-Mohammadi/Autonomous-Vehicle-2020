@@ -38,7 +38,7 @@ the second step is to get the data using CARLA itself
 3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
 ## 2. CARLA:
-here's a little code i've written. all you have to do is run [spawn_vehicle]() to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
+here's a little code i've written. all you have to do is run [spawn_vehicle](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/CARLA%20CODES/spawn_npc.py) to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
 run these commands on cmd 
 
     py -3.7 spawn_vehicle.py -n 160 
