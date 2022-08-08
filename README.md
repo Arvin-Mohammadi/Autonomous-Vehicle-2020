@@ -40,6 +40,9 @@ the second step is to get the data using CARLA itself
 3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
 ### CARLA:
+
+![CARLA 9.5](https://i.ibb.co/bdkMCbK/1245568.png)
+
 here's a little code i've written. all you have to do is run [spawn_vehicle](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/CARLA%20CODES/spawn_npc.py) to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
 run these commands on cmd 
 
@@ -51,12 +54,13 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
 
 # step 3: MODEL TRAINING
 
+![object detection](https://i.ibb.co/ZL8dW5S/detected-picture.jpg)
+
 so here we can use **transfer learning** and fine tuning to build an accurate model that doesn't use a lot of computational power. 
 
 - one way is to use this repository for [Yolo version 4](https://github.com/AlexeyAB/darknet) and follow the steps to make a fine tuned model 
 
 - another way is to follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte)
-
 
 # OTHER RESOURCES
 
