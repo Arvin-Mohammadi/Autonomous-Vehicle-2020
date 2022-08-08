@@ -1,13 +1,12 @@
-# CARLA
- this repository is dedicated to making a step by step guide to simulate a self-driving car in CARLA using deep learning models 
- if you want to see more of my stuff you can check out this link:
- https://t.me/engineering_stuff_69
+# SELF-DRIVING CAR
+ this repository is dedicated to making a step by step guide to simulate a self-driving car in **CARLA** using deep learning models 
+ if you want to see more of my stuff you can check out my [telegram channel](https://t.me/engineering_stuff_69)
 
 # step 1: CARLA SETUP
 
 1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 
-2. and this is a good playlist on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem: [good youtube playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo)
+2. and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem.
 
 # step 2: MAKING A DATASET
 there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
@@ -16,30 +15,30 @@ the second step is to get the data using CARLA itself
 ## 1. INTERNET:
 
 1. DATASET FROM DIFFERENT WEBSITES: <br />
-{ <br />
-https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars <br />
 
-https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars <br />
+- https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars <br />
 
-https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars <br />
+- https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars <br />
 
-https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian <br />
+- https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars <br />
 
-https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian <br />
+- https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian <br />
 
-https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat <br />
+- https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian <br />
 
-https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection <br />
+- https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat <br />
 
-https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection <br />
-}
+- https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection <br />
+
+- https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection <br />
+
    
 2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached: [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py)
 
 3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
-## 2. CARLA: 
-here's a little code i've written. all you have to do is run spawn_vehicle to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
+## 2. CARLA:
+here's a little code i've written. all you have to do is run [spawn_vehicle]() to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
 run these commands on cmd 
 
     py -3.7 spawn_vehicle.py -n 160 

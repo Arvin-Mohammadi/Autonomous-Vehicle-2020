@@ -1,6 +1,7 @@
 print(" control keys: ")
 print(" up arrow key = throttle \n down arrow key = reverse \n right arrow key = steer right \n left arrow key = steer left \n space bar = brake")
 print(" 'd' key = object detection \n 'a' key = autopilot \n 's' key = save dataset \n ")
+
 # ==============================================================================
 # -- Find carla module ---------------------------------------------------------
 # ==============================================================================
