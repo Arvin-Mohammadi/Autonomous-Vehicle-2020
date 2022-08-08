@@ -12,32 +12,32 @@
 there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
 the second step is to get the data using CARLA itself
  
-## 1. INTERNET:
+### INTERNET:
 
 1. DATASET FROM DIFFERENT WEBSITES: <br />
 
-- https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars <br />
+    &nbsp; - https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars <br />
 
-- https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars <br />
+    - https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars <br />
 
-- https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars <br />
+    - https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars <br />
 
-- https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian <br />
+    - https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian <br />
 
-- https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian <br />
+    - https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian <br />
 
-- https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat <br />
+    - https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat <br />
 
-- https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection <br />
+    - https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection <br />
 
-- https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection <br />
+    - https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection <br />
 
    
 2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached: [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py)
 
 3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
-## 2. CARLA:
+### CARLA:
 here's a little code i've written. all you have to do is run [spawn_vehicle](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/CARLA%20CODES/spawn_npc.py) to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
 run these commands on cmd 
 
