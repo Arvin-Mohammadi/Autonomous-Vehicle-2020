@@ -4,7 +4,7 @@
 
 # step 1: CARLA SETUP
 
-![CARLA 9.5](https://drive.google.com/drive/folders/1tgLUdvrnMTaAWfAVYUA3xP-dInUR2cvR)
+![CARLA 9.5](https://ibb.co/Hg4vmMq)
 
 1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 
