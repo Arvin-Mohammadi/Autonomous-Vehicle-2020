@@ -6,9 +6,13 @@
 
 ![CARLA 9.5](https://i.ibb.co/ysPTLMq/Untitled.png)
 
-1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
+- you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
+- and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem.
+1. **where to download**: go to [this link](https://github.com/carla-simulator/carla/blob/master/Docs/download.md) and get the version 9.5 CARLA 
+2. **what version of python is needed?**: according to <br \> \CARLA\CARLA 9.5\PythonAPI\carla\dist\carla-0.9.5-py3.7-win-amd64.egg <br \> you'll need the python version 3.7 windows amd64 so download that from the official python website
 
-2. and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem.
+
+
 
 # step 2: MAKING A DATASET
 there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
