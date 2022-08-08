@@ -4,7 +4,7 @@
 
 # step 1: CARLA SETUP
 
-![CARLA 9.5](https://ibb.co/Hg4vmMq)
+![CARLA 9.5](https://i.ibb.co/ysPTLMq/Untitled.png)
 
 1. you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 
