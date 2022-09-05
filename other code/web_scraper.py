@@ -1,5 +1,7 @@
-'''https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q={q}&oq={q}&gs_l=img
-and replace the {q} with our search term.'''
+
+# =================================================================================================
+# -- IMPORT ---------------------------------------------------------------------------------------
+# =================================================================================================
 
 import os
 from selenium import webdriver
@@ -7,16 +9,23 @@ from selenium.webdriver.common.keys import Keys
 import pandas as pd
 import time
 import requests
-# getting the images urls and putting them in a list
+import colorama 
+from colorama import Fore, Back, Style
 
+colorama.init()
 
+# =================================================================================================
+# -- LIST OF URLS ---------------------------------------------------------------------------------
+# =================================================================================================
 
 def fetch_image_urls(query: str, max_link_to_fetch: int, wd: webdriver, sleep_between_interactions: int = 1):
+
+    # scroll to the end of the page 
     def scroll_to_end(wd):
         wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(3)
+        time.sleep(5)
 
-
+    # make the url with the search term
     search_url = "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q={q}&oq={q}&gs_l=img"
 
     # load the page 
@@ -25,9 +34,11 @@ def fetch_image_urls(query: str, max_link_to_fetch: int, wd: webdriver, sleep_be
     image_urls = set()
     image_count = 0
     results_start = 0
-    while image_count < max_link_to_fetch:
-        scroll_to_end(wd)
 
+    # looping over in page to find images 
+    while image_count < max_link_to_fetch:
+
+        scroll_to_end(wd)
 
         # get all image thumbnail results 
         thumbnail_results = wd.find_elements_by_css_selector("img.Q4LuWd")
@@ -35,6 +46,7 @@ def fetch_image_urls(query: str, max_link_to_fetch: int, wd: webdriver, sleep_be
 
         print(f"Found: {number_results} search results. Extracting links from {results_start}:{number_results}")
 
+        # clicking on the images and waiting till it loads 
         for img in thumbnail_results[results_start:number_results]:
             try: 
                 img.click()
@@ -66,11 +78,12 @@ def fetch_image_urls(query: str, max_link_to_fetch: int, wd: webdriver, sleep_be
 
     return image_urls
 
+# =================================================================================================
+# --  ---------------------------------------------------------------------------------------------
+# =================================================================================================
+
 def persist_image(folder_path: str, url: str, counter):
     try:
-        print("this is the url")
-        print(type(url))
-        print(url)
         image_content = requests.get(url).content
     except Exception as e:
         print(f"ERROR - Could not download {url} - {e}")
@@ -86,20 +99,31 @@ def persist_image(folder_path: str, url: str, counter):
     except Exception as e:
         print(f"ERROR - Could not save {url} - {e}")
 
-def search_and_download(search_term: str, driver_path: str, target_path='./images', number_images=50):
+# =================================================================================================
+# -- DOWNLOADING THE IMAGES -----------------------------------------------------------------------
+# =================================================================================================
+
+def search_and_download(search_term: str, driver_path: str, target_path='./images', number_images=5): 
+
     target_folder = os.path.join(target_path, '_'.join(search_term.lower().split(' ')))
 
     if not os.path.exists(target_folder):
         os.makedirs(target_folder)
 
     with webdriver.Chrome(executable_path=driver_path) as wd:
-        res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=0.5)
+        res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=15)
 
     print("this is res")
     print(type(res))
     print(res)
 
     counter = 0 
+    
+    file = open(target_folder + '\\urls.txt', 'a')
+        
+    for elem in res:
+        file.write(str(elem) + '\n')
+
     for elem in res: 
         print("this is elem")
         print(type(elem))
@@ -108,8 +132,39 @@ def search_and_download(search_term: str, driver_path: str, target_path='./image
         counter += 1 
 
 
+# =================================================================================================
+# -- LOOP -----------------------------------------------------------------------
+# =================================================================================================
 
-DRIVER_PATH = './chromedriver'
-search_term = 'president biden'
+def loop():
+    
+    DRIVER_PATH = 'D:\\chromedriver.exe'
+    
+    # looping over until input "exit" recieved by user
+    while True: 
+        print(Fore.GREEN + "\nexit - quit the script", "s search--term - starts searching the web" + Fore.WHITE, sep='\n')
 
-search_and_download(search_term=search_term, driver_path=DRIVER_PATH)
+        input_string = input("Input command: ") # input command
+
+        if input_string == "exit":          # in case of entering "exit", exits the scripts
+            break
+
+        elif input_string[0] == "s":        # in case of entering "s search-term", initialize the search and download script
+            search_term = input_string[2:]
+            try:
+                N_IMAGES = int(input('Number of Images: '))
+            except:
+                print(Fore.RED + "Input must be an integer" + Fore.WHITE)
+                continue
+            search_and_download(search_term=search_term, driver_path=DRIVER_PATH, number_images=N_IMAGES)
+        
+        else:                               # in any other case of input, goes back to the start of the loop
+            pass
+
+        
+
+# =================================================================================================
+# -- DOWNLOADING THE IMAGES -----------------------------------------------------------------------
+# =================================================================================================
+
+loop()
