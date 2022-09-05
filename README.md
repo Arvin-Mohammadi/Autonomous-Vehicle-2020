@@ -30,34 +30,17 @@
       this will spawn 80 vehicles to your carla server
     
 
-# step 2: MAKING A DATASET
-there are two ways to go about this issue, first is to gather dataset from internet (like google image, or kaggle, etc) 
-the second step is to get the data using CARLA itself
+# HOW TO MAKE A DATASET
+here's how you can gather some decent datasets:
  
-### INTERNET:
+### WEB-SCRAPING:
 
-1. DATASET FROM DIFFERENT WEBSITES: <br />
+1. GOOGLE IMAGE: here's a little [script](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py) i've coded for web-scraping, all you need to do is to run the following command:
+```
+    python web_scraper.py
+```
 
-    - https://www.kaggle.com/datasets/brsdincer/vehicle-detection-image-set?resource=download    # cars <br />
-
-    - https://www.kaggle.com/datasets/dataclusterlabs/indian-vehicle-dataset                     # cars <br />
-
-    - https://www.kaggle.com/datasets/sshikamaru/car-object-detection                            # cars <br />
-
-    - https://www.kaggle.com/datasets/saravananchandran/pedestrian-detection-data-set            # pedestrian <br />
-
-    - https://www.kaggle.com/datasets/alincijov/penn-fudan                                       # pedestrian <br />
-
-    - https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection                            # dog and cat <br />
-
-    - https://universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa/dataset/20        # CARLA object detection <br />
-
-    - https://www.kaggle.com/datasets/alechantson/carladataset                                   # CARLA object detection <br />
-
-   
-2. GOOGLE IMAGE: here's a little code i've written for webscraping file attached: [web_scraper.py](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py)
-
-3. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
+2. PARSEHUB: there is also the "parsehub" software you can download and use. (just google parsehub)
 
 ### CARLA:
 
