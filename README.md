@@ -35,7 +35,7 @@ here's how you can gather some decent datasets:
  
 ### WEB-SCRAPING:
 
-1. GOOGLE IMAGE: here's a little [script](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py) i've coded for web-scraping, all you need to do is to run the following command:
+1. GOOGLE IMAGE: here's a little [script](https://github.com/ArthasMenethil-A/CARLA/blob/main/other%20code/web_scraper.py) i've coded for web-scraping, all you need to do is to download the script and run the following command in your cmd:
 ```
     python web_scraper.py
 ```
@@ -59,18 +59,19 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
 
 ![object detection](https://i.ibb.co/ZL8dW5S/detected-picture.jpg)
 
-so here we can use **transfer learning** and fine tuning to build an accurate model that doesn't use a lot of computational power. 
+so here we can use **Transfer Learning and Fine Tuning** to build an accurate model that doesn't use a lot of computational power. 
 
-- one way is to use this repository for [Yolo version 4](https://github.com/AlexeyAB/darknet) and follow the steps to make a fine tuned model 
-
-- another way is to follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte)
-
-to run my code for this run this command:
+1. if you want to see what does yolo looks while running on CARLA, you can run [my script](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py) by entering the following commands on cmd:
     ```
     py -3.7 spawn_vehicle.py -n 160 
     py -3.7 object_detection_dataset.py 
     ```
-and then press 'd' key and that will save a picture to your default path that 
+and then press 'd' key and that will save a picture to your default path with applied object detection (real time object detection was really demanding with CARLA running)
+
+2. 
+
+- follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte) if you didn't understand the steps 
+
 
 # OTHER RESOURCES
 
