@@ -2,16 +2,18 @@
  this repository is dedicated to making a step by step guide to simulate a self-driving car in **CARLA** using deep learning models 
  if you want to see more of my stuff you can check out my [telegram channel](https://t.me/engineering_stuff_69)
 
-# step 1: CARLA SETUP
+# CARLA
 
 ![CARLA 9.5](https://i.ibb.co/ysPTLMq/Untitled.png)
 
 - you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
-- and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL but i don't think RL is the right answer to this, i'm going to use CNN and image-processing to solve this problem.
+- and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL. 
+
+-- setup carla using the following steps ------------------------------------------------------------
 
 1. **where to download**: go to [this link](https://github.com/carla-simulator/carla/blob/master/Docs/download.md) and get the *version 9.5 CARLA*
 
-2. **what version of python is needed?**: according to <br /> \CARLA\CARLA 9.5\PythonAPI\carla\dist\carla-0.9.5-py3.7-win-amd64.egg <br /> you'll need the *python version 3.7 windows amd64* so download that from the official python website
+2. **what version of python is needed?**: according to the following path: <br /> ```\CARLA\CARLA 9.5\PythonAPI\carla\dist\carla-0.9.5-py3.7-win-amd64.egg ``` <br /> you'll need the *python version 3.7 windows amd64* so download that from the official python website (depending on the version of carla you'll be using, this might be different)
 
 3. **can you give me an example of running a code ?**: you should note the following 
     - don't forget to add the python 3.7 to your system path [check here if you don't know how to do that](https://docs.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/ee537574(v=office.14))
