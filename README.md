@@ -61,20 +61,48 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
 
 so here we can use **Transfer Learning and Fine Tuning** to build an accurate model that doesn't use a lot of computational power. 
 
-1. if you want to see what does yolo looks while running on CARLA, you can run [my script](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py) by entering the following commands on cmd:
+if you want to see what does yolo looks while running on CARLA, you can run [my script](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py) by entering the following commands on cmd:
     ```
     py -3.7 spawn_vehicle.py -n 160 
     py -3.7 object_detection_dataset.py 
     ```
 and then press 'd' key and that will save a picture to your default path with applied object detection (real time object detection was really demanding with CARLA running)
 
-2. 
+## Steps for using yolo from scratch
+
+1. make a virtual environment.
+
+use the following command in cmd or terminal: 
+```
+    python -m venv virtual_environment_name
+```
+and then for activating this virtual environment you can use the following command in windows: 
+```
+    .\virtual_environment_name\scripts\activate
+```
+and the similar command for linux is:
+```
+    source virtual_environment_name/bin/activate
+```
+
+2. find the compatible versions of "torch" and "CUDA", you can check [this link](https://pytorch.org/get-started/locally/) for choosing the version of torch you want to use. then you can find the compatible version of cuda in [this link](https://developer.nvidia.com/cuda-toolkit-archive)
+
+3. pip install numpy, jupyter notebook, pandas, cv2 in your virtual environment
+- NOTE: when you run the command `pip install numpy` when your virtual environment it might say requirements already met or that it is now installed but when you want to import the numpy or use it anywhere, you get an error `no module named numpy` in that case you should use `pip install -U --force-reinstall numpy`
+- NOTE: you might get permission error in your virtual environment. the way to resolve this is to go to the path `virtual_environment_name\pyvenv.cfg` and in that file, change the line `include-system-site-packages = false` to `include-system-site-packages = true`
+
+4. add your virtual envirnment to ipykernel 
+```
+    python -m ipykernel install --user --name=virtual_environment_name
+```
+
+5. run the jupyter notebook script in [this file]()
 
 - follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte) if you didn't understand the steps 
 
 
 # OTHER RESOURCES
 
- 1. in this step i'll introduce a good source for learning how object detection works: [object detection course](https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte)
-  i've cleaned up and commented a bit on the source code of this course in this file so it might be a little easier to understand: [object detection file](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb)
+1. in this step i'll introduce a good source for learning how object detection works: [object detection course](https://www.youtube.com/watch?v=yqkISICHH-U&ab_channel=NicholasRenotte)
+i've cleaned up and commented a bit on the source code of this course in this file so it might be a little easier to understand: [object detection file](https://github.com/ArthasMenethil-A/CARLA/blob/main/object%20detection/Training_model.ipynb)
 
