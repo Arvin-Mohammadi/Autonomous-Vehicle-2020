@@ -9,7 +9,7 @@
 - you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 - and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL. 
 
--- setup carla using the following steps -------------------------------------------------------------------------------------------
+-- setup carla using the following steps --------------------------------------------------------------------------------------
 
 1. **where to download**: go to [this link](https://github.com/carla-simulator/carla/blob/master/Docs/download.md) and get the *version 9.5 CARLA*
 
