@@ -23,7 +23,7 @@
       py -3.7 -m pip install numpy pygame 
       ```
     - CARLA uses TCP ports 2000 and 2001 by defaul, you'll need to open them (or if it's occupied, empty them), [here's how to open tcp ports](https://www.firehousesoftware.com/webhelp/FH/Content/FHEnterprise/FHEnterpriseInstallationGuide/24_StaticPort.htm)
-    - open CARLA and then go the path <br /> C:\CARLA\CARLA 9.5\PythonAPI\examples <br /> then open cmd in that path and run this command: 
+    - open CARLA and then go the path <br /> `C:\CARLA\CARLA 9.5\PythonAPI\examples` <br /> then open cmd in that path and run this command: 
       ```
       py -3.7 spawn_npc.py -n 80
       ```
