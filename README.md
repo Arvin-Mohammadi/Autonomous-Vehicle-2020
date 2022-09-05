@@ -30,7 +30,7 @@
       this will spawn 80 vehicles to your carla server
     
 
-# HOW TO MAKE A DATASET
+# DATASET
 here's how you can gather some decent datasets:
  
 ### WEB-SCRAPING:
@@ -46,7 +46,7 @@ here's how you can gather some decent datasets:
 
 ![CARLA 9.5](https://i.ibb.co/bdkMCbK/1245568.png)
 
-here's a little code i've written. all you have to do is run [spawn_vehicle](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/CARLA%20CODES/spawn_npc.py) to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
+this is the script i've coded for gathering dataset from carla. all you have to do is run this file [spawn_vehicle](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/CARLA%20CODES/spawn_npc.py) to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
 run these commands on cmd 
 
     py -3.7 spawn_vehicle.py -n 160 
@@ -55,8 +55,7 @@ run these commands on cmd
 then in the window that appears push down "a" key to toggle autopilot and push "s" key to toggle save_data (which saves an image every 3 seconds to your hard drive)
 i've commented quite a bit in my code so you can probably analyse quite easily to make changes as you would want 
 
-# step 3: OBJECT DETECTION
-
+# FINE-TUNING YOLO
 
 ![object detection](https://i.ibb.co/ZL8dW5S/detected-picture.jpg)
 
