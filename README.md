@@ -96,9 +96,9 @@ and the similar command for linux is:
     python -m ipykernel install --user --name=virtual_environment_name
 ```
 
-5. run the jupyter notebook script in [this file]()
+5. run the jupyter notebook script in [this file](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/object%20detection/Yolo_Fine_Tuning.ipynb) 
 
-- follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte) if you didn't understand the steps 
+- follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte) if you didn't understand the steps
 
 
 # OTHER RESOURCES
