@@ -100,6 +100,9 @@ and the similar command for linux is:
 
 - follow the steps from [this video](https://www.youtube.com/watch?v=tFNJGim3FXw&list=WL&index=1&t=1282s&ab_channel=NicholasRenotte) if you didn't understand the steps
 
+# DISTANCE APPROXIMATION
+In order to determine the distance from our camera to a known object or marker we're going to utilize Traingle Similarity. 
+$$F = \frac{P\timesD}{W}$$
 
 # OTHER RESOURCES
 
