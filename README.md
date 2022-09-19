@@ -102,7 +102,7 @@ and the similar command for linux is:
 
 # DISTANCE APPROXIMATION
 In order to determine the distance from our camera to a known object or marker we're going to utilize Traingle Similarity. 
-$$F = \frac{P\timesD}{W}$$
+$$F = \frac{P\times D}{W}$$
 
 # OTHER RESOURCES
 
