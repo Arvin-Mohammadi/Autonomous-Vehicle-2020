@@ -60,7 +60,6 @@ def fetch_image_urls(query: str, max_link_to_fetch: int, wd: webdriver, sleep_be
                 if actual_image.get_attribute('src') and 'http' in actual_image.get_attribute('src'):
                     image_urls.add(actual_image.get_attribute('src'))
 
-
             image_count = len(image_urls)
 
             if len(image_urls) >= max_link_to_fetch:
@@ -103,33 +102,18 @@ def persist_image(folder_path: str, url: str, counter):
 # -- DOWNLOADING THE IMAGES -----------------------------------------------------------------------
 # =================================================================================================
 
-def search_and_download(search_term: str, driver_path: str, target_path='./images', number_images=5): 
+def search_and_download(search_term: str, driver_path: str, target_path='./images', number_images: int=5): 
 
-    target_folder = os.path.join(target_path, '_'.join(search_term.lower().split(' ')))
+    target_folder = os.path.join(target_path, '_'.join(search_term.lower().split(' ')))            # updates the target folder path to .\image\search-term
 
-    if not os.path.exists(target_folder):
+    if not os.path.exists(target_folder):                                                          # makes the directory if there is none
         os.makedirs(target_folder)
 
-    with webdriver.Chrome(executable_path=driver_path) as wd:
-        res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=15)
-
-    print("this is res")
-    print(type(res))
-    print(res)
-
-    counter = 0 
-    
-    file = open(target_folder + '\\urls.txt', 'a')
-        
-    for elem in res:
-        file.write(str(elem) + '\n')
-
-    for elem in res: 
-        print("this is elem")
-        print(type(elem))
-        print(elem)
-        persist_image(target_folder, elem, counter)
-        counter += 1 
+    with webdriver.Chrome(executable_path=driver_path) as wd:                                      # finds the chrome driver 
+        res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=15)   # gathers the urls 
+ 
+    for counter, elem in enumerate(res):                                                           # loops over the urls 
+        persist_image(target_folder, elem, counter)                                                # downloads the content of the urls
 
 
 # =================================================================================================
@@ -146,10 +130,10 @@ def loop():
 
         input_string = input("Input command: ") # input command
 
-        if input_string == "exit":          # in case of entering "exit", exits the scripts
+        if input_string == "exit":              # in case of entering "exit", exits the scripts
             break
 
-        elif input_string[0] == "s":        # in case of entering "s search-term", initialize the search and download script
+        elif input_string[0] == "s":            # in case of entering "s search-term", initialize the search and download script
             search_term = input_string[2:]
             try:
                 N_IMAGES = int(input('Number of Images: '))
@@ -158,7 +142,7 @@ def loop():
                 continue
             search_and_download(search_term=search_term, driver_path=DRIVER_PATH, number_images=N_IMAGES)
         
-        else:                               # in any other case of input, goes back to the start of the loop
+        else:                                   # in any other case of input, goes back to the start of the loop
             pass
 
         
