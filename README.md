@@ -109,8 +109,40 @@ where:
 - $P$ = apparent width in pixels 
 - $F$ = focal legnth
 
-### source
+## Theory 
+These are the steps to be taken for finding the distance approximation
+
+### Step 1 (Reference Image)
+Capture reference image: Measure the disntance from the object to the camera, capture a reference image and note down the measured distance.
+
+### Step 2 (Measurement)
+Measure the object width make sure that measurement units are kept for reference image and object width 
+
+### Step 3 (Object Detection)
+**INPUT: image
+OUTPUT: face width**
+this function will detect the object and return the object width in **pixel** values.
+
+### Step 4 (Focal Length Finder)
+**INPUT:** 
+**- measured distance (unit meters)**
+**- real width (unit meters)**
+**- width in image (unit pixels)**
+**OUTPUT: $Focal length = measured_distance\times image_width/real_width$**
+
+### Step 5 (Distance Finder)
+**INPUT:**
+**- focal length (unit pixels)**
+**- real width (unit meters)**
+**- width in image (unit meters)**
+**OUTPUT: $approximated_distance = focal_length \times real_width/image_width$**
+
+## Python Implementation
+
+
+## source
 [Find distance from camera to object/marker using python and OpenCV](https://pyimagesearch.com/2015/01/19/find-distance-camera-objectmarker-using-python-opencv/)
+[Real-time Distance Approximation using openCV-Python](https://www.geeksforgeeks.org/realtime-distance-estimation-using-opencv-python/)
 
 # OTHER RESOURCES
 
