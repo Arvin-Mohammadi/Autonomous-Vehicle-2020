@@ -135,7 +135,7 @@ this function will detect the object and return the object width in **pixel** va
 **- focal length (unit pixels)**
 **- real width (unit meters)**
 **- width in image (unit meters)**
-**OUTPUT: $approximated_distance = focal_ length \times real_ width/image_ width$**
+**OUTPUT: $approximated distance = focal length \times real width/image width$**
 
 ## Python Implementation
 
