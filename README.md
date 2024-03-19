@@ -1,5 +1,5 @@
 # Autonomous-Vehicle-2020
-This repostiry is dedicated to study the following: 
+This repository is dedicated to study the following: 
 - Simulation in CARLA
 - Image Detection using YOLO-V5
 - Distance Estimation Based on 2D Images
