@@ -1,6 +1,10 @@
-# SELF-DRIVING CAR
- this repository is dedicated to making a step by step guide to simulate a self-driving car in **CARLA** using deep learning models 
- if you want to see more of my stuff you can check out my [telegram channel](https://t.me/engineering_stuff_69)
+# Autonomous-Vehicle-2020
+This repostiry is dedicated to study the following: 
+- Simulation in CARLA
+- Image Detection using YOLO-V5
+- Distance Estimation Based on 2D Images
+
+The newer version of this repository is available in the following [link](https://github.com/ArthasMenethil-A/Autonomous-Vehicle-2021)
 
 # CARLA
 
