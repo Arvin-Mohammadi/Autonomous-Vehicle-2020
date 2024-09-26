@@ -8,7 +8,8 @@ The newer version of this repository is available in the following [link](https:
 
 # CARLA
 
-![CARLA 9.5](https://i.ibb.co/ysPTLMq/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/987e07a8-5f68-429e-9aab-dfcb5b74a989)
+
 
 - you can download the version of CARLA you need from this link: [CARLA WEBSITE](https://carla.org/)
 - and this is a [good playlist](https://www.youtube.com/playlist?list=PLQVvvaa0QuDeI12McNQdnTlWz9XlCa0uo) on how to get started with CARLA plus he codes a bunch of stuff using RL. 
@@ -48,7 +49,7 @@ here's how you can gather some decent datasets:
 
 ### CARLA:
 
-![CARLA 9.5](https://i.ibb.co/bdkMCbK/1245568.png)
+![1245568](https://github.com/user-attachments/assets/1689eb20-19fe-48db-b4c2-fba4761f1f46)
 
 this is the script i've coded for gathering dataset from carla. all you have to do is run this file [spawn_vehicle](https://github.com/ArthasMenethil-A/Self-driving-car/blob/main/CARLA%20CODES/spawn_npc.py) to make a bunch of cars in CARLA and then run: [my code](https://github.com/ArthasMenethil-A/CARLA/blob/main/CARLA%20CODES/object_detection_dataset.py)
 run these commands on cmd 
@@ -61,7 +62,8 @@ i've commented quite a bit in my code so you can probably analyse quite easily t
 
 # FINE-TUNING YOLO
 
-![object detection](https://i.ibb.co/ZL8dW5S/detected-picture.jpg)
+![detected_picture](https://github.com/user-attachments/assets/6dd534dc-993f-49f4-994a-ba2998b10b22)
+
 
 so here we can use **Transfer Learning and Fine Tuning** to build an accurate model that doesn't use a lot of computational power. 
 
